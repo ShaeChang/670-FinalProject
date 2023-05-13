@@ -1,0 +1,6 @@
+"0","policy_doc <- read_csv(""policydocument.csv"") %>%"
+"0","  select(number, title, year, content) %>%"
+"0","  filter(!is.na(content))"
+"2","Error in read_csv(""policydocument.csv"") : 
+  could not find function ""read_csv""
+"

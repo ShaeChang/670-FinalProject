@@ -1,0 +1,4 @@
+"0","policy_keywords %>%"
+"0","  select(number, keyword_Eng, title_Eng) %>%"
+"0","  mutate(Num = as.double(number) - 1) %>%"
+"0","  select(Num, keyword_Eng, title_Eng)"

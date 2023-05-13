@@ -1,0 +1,6 @@
+"0","set.seed(20220706)"
+"0","p3 <- subfile_token %>%"
+"0","  filter(title == ""关于电力交易机构组建和规范运行的实施意见"") %>%"
+"0","  select(token, n) %>%"
+"0","  wordcloud2(size = 1, color = ""#003366"", backgroundColor = ""#FFFFCC"", shape = 'diamond')"
+"0","knitr::include_graphics(""data/p3.png"")"

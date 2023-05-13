@@ -1,0 +1,6 @@
+"0","set.seed(20220906)"
+"0","p5 <- subfile_token %>%"
+"0","  filter(title == ""关于推进售电侧改革的实施意见"") %>%"
+"0","  select(token, n) %>%"
+"0","  wordcloud2(size = 1, color = ""#003366"", backgroundColor = ""#FFFFCC"")"
+"0","knitr::include_graphics(""data/p5.png"")"

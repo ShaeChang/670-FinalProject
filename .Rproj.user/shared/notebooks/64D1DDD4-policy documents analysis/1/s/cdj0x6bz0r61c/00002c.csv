@@ -1,0 +1,6 @@
+"0","set.seed(20220806)"
+"0","p4 <- subfile_token %>%"
+"0","  filter(title == ""关于有序放开发用电计划的实施意见"") %>%"
+"0","  select(token, n) %>%"
+"0","  wordcloud2(size = 1, color = ""#003366"", backgroundColor = ""#FFFFCC"")"
+"0","knitr::include_graphics(""data/p4.png"")"

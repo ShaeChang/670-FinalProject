@@ -1,0 +1,6 @@
+"0","set.seed(20221006)"
+"0","p6 <- subfile_token %>%"
+"0","  filter(title == ""关于加强和规范燃煤自备电厂监督管理的指导意见"") %>%"
+"0","  select(token, n) %>%"
+"0","  wordcloud2(size = 1, color = ""#003366"", backgroundColor = ""#FFFFCC"", shape = 'diamond')"
+"0","knitr::include_graphics(""data/p6.png"")"

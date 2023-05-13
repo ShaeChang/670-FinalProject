@@ -1,0 +1,7 @@
+"0",""
+"0","set.seed(20220606)"
+"0","p2 <- subfile_token %>%"
+"0","  filter(title == ""关于推进电力市场建设的实施意见"") %>%"
+"0","  select(token, n) %>%"
+"0","  wordcloud2(size = 1, color = ""#003366"", backgroundColor = ""#FFFFCC"", shape = 'diamond')"
+"0","knitr::include_graphics(""data/p2.png"")"

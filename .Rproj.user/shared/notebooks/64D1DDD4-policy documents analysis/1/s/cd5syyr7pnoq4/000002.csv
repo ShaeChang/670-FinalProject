@@ -1,0 +1,3 @@
+"0","# see the frequency of the words in our text"
+"0","policy_token %>%"
+"0","  count(token, sort = TRUE)"

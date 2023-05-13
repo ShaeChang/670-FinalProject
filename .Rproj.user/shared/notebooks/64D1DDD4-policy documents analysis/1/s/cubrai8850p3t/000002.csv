@@ -1,0 +1,52 @@
+"0","policy_doc <- read_csv(""policydocument.csv"") %>%"
+"0","  select(number, title, year, content) %>%"
+"0","  filter(!is.na(content)) %>%"
+"0","  filter(!is.na(year))"
+"1","[1mRows: [22m[34m131[39m [1mColumns: [22m[34m5[39m
+"
+"1","[36m──[39m [1mColumn specification[22m [36m─────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m (3): title, content, note
+[32mdbl[39m (2): number, year
+"
+"1","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message.
+"
+"0","custom_stopword <- read_csv(""customed stop word.csv"")"
+"1","[1mRows: [22m[34m26[39m [1mColumns: [22m[34m1[39m
+"
+"1","[36m──[39m [1mColumn specification[22m [36m─────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m (1): stop_word
+"
+"1","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message.
+"
+"0","tokenizer = worker("
+"0","  user = ""electricity_word.txt"","
+"0","  # Added customed user vocabulary list; which is the electricity industry topic cell lexicons downloaded at https://pinyin.sogou.com/dict/search/search_list/%B5%E7%C1%A6/normal/"
+"0","  # to convert the .scel lexicons into .txt file for editing, https://github.com/studyzy/imewlconverter is used."
+"0","  # Note: more specific electricity industry reform vocabularies are typed in the .txt file manually"
+"0","  stop_word = ""customed chinese stop word.txt"","
+"0","  # the stop words are customed based on Chinese R online forum & manually edited based on industry knowledge"
+"0","  bylines = TRUE"
+"0","  #able to convert each document respectively"
+"0","  )"
+"0",""
+"0","# tokenize all the content, the electricity industry reform policy documents, inserted"
+"0","doc_token <- segment(policy_doc$content,tokenizer)"
+"0",""
+"0","#define a function to extract the tokens, and apply this function to all of the tokens by documents, because the Chinese text mining package cannot make it automatically"
+"0","extract_token <- function(x){"
+"0","  df <- data_frame(token = doc_token[[x]], number = x, year = policy_doc$year[x], title = policy_doc$title[x])"
+"0","  return(df)"
+"0","}"
+"0","policy_token <- bind_rows(lapply(1:79, extract_token))"
+"2","Warning:"
+"2"," `data_frame()` was deprecated in tibble 1.1.0.
+Please use `tibble()` instead.
+[90mThis warning is displayed once every 8 hours.[39m
+[90mCall `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.[39m
+"

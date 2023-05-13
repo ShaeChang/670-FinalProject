@@ -1,0 +1,31 @@
+"0","library(dplyr)"
+"0","library(tidyverse)"
+"0","library(tidymodels)"
+"0","library(textrecipes)"
+"0","library(jiebaR) "
+"0"," # the Chinese tokenizer package"
+"0","library(purrr)"
+"0","library(ggplot2)"
+"0","library(wordcloud2)"
+"0","library(RColorBrewer)"
+"0","library(topicmodels)"
+"0","library(tidytext)"
+"0","library(quanteda)"
+"0","library(SnowballC)"
+"0","library(sentimentr)"
+"2","Registered S3 method overwritten by 'data.table':
+  method           from
+  print.data.table     
+"
+"0","library(reshape2)"
+"2","
+Attaching package: ‘reshape2’
+
+"
+"2","The following object is masked from ‘package:tidyr’:
+
+    smiths
+
+"
+"0","library(wordcloud)"
+"0","library(textdata)"
